@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div id=main_div class="container">
+      <img id=header_img src=RRPodkast.png height="150px">
+
+    <button id="play_button">Finn tilfeldig podkast</button>
+    <p id="current_playing_pod"></p>
+
+    <audio id="podcast_audio" autoplay controls>
+    </audio>
+
+    </div>
+
+    <div id=podlist_div class="container">
+      <h1 id=main_title>Alle podkaster</h1>
+      <table id=podlist_table >
+        <th>Tittel</th>
+        <th>Dato</th>
+        <th>Lengde</th>
+      </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src=script.js></script>
+
+  </body>
+</html>
