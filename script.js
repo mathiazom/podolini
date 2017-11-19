@@ -18,11 +18,12 @@ function loadPods(){
   var url= 'http://podkast.nrk.no/program/radioresepsjonen.rss';
   $.ajax({
     type: 'GET',
-    url: "https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Fpodkast.nrk.no%2Fprogram%2Fradioresepsjonen.rss&api_key=xtdekxjqe8a9mdbrid1u2lalz7qlhsjnh1xoget1&count=200",
-    dataType: 'jsonp',
+    url: "https://morning-earth-19323.herokuapp.com/?feedURL=" + url,
+    dataType: 'json',
     success: function(data) {
+      console.log(data);
       for(item of data.items){
-        var podLink = item.enclosure.link;
+        var podLink = item.enclosures[0].url;
         var podIndex = data.items.indexOf(item);
         podArray[podIndex] = item;
 
@@ -38,11 +39,11 @@ function loadPods(){
 
         var podDate = document.createElement("td");
         podDate.className = "podlist_item"
-        podDate.innerHTML = item.pubDate;
+        podDate.innerHTML = new Date(item.created);
 
         var podDuration = document.createElement("td");
         podDuration.className = "podlist_item"
-        podDuration.innerHTML = item.enclosure.length;
+        podDuration.innerHTML = item.enclosures[0].length;
 
         podRow.appendChild(podTitle);
         podRow.appendChild(podDate);
