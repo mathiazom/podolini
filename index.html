@@ -1,35 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  </head>
 
-  <body>
+<head>
 
-    <div id=main_div class="container">
-      <img id=header_img src=RRPodkast.png height="150px">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <button id="play_button">Finn tilfeldig podkast</button>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src=script.js></script>
+  <script src=nym.js></script>
+
+</head>
+
+<body>
+
+  <div id=main_div>
+
+    <img id=header_img src=RRPodkast.png height="150px">
+
+  </div>
+
+  <div id="current_playing_div">
     <p id="current_playing_pod"></p>
+    <audio id="podcast_audio" autoplay controls></audio>
+  </div>
 
-    <audio id="podcast_audio" autoplay controls>
-    </audio>
+  <div id=podlist_div>
+
+    <div class="post_pods_load">
+
+      <button id="random_play_button">
+        <span class="material-icons">casino</span>
+        <p id="random_play_text">
+          Spill av tilfeldig
+        </p>
+      </button>
+
+      <table id="podlist_table"></table>
 
     </div>
 
-    <div id=podlist_div class="container">
-      <h1 id=main_title>Alle podkaster</h1>
-      <table id=podlist_table >
-        <th>Tittel</th>
-        <th>Dato</th>
-        <th>Lengde</th>
-      </table>
+    <!-- Loading circle -->
+    <div id=splash class="pre_pods_load">
+
+      <p id=splash_text class="center-align"></p>
+
+      <div id=splash_preloader class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-red-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src=script.js></script>
+  </div>
 
-  </body>
+
+
+</body>
+
 </html>
