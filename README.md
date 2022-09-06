@@ -1,6 +1,13 @@
 <img src="RRPodkast.png" width=200/>
 
 # podolini
+
+---
+
+**[UTDATERT!]** Dette prosjektet er arkivert ettersom NRK har avviklet RSS-strømmen for Radioresepsjonen. Episodene er fortsatt tilgjengelig via [NRK Radio](https://radio.nrk.no/podkast/radioresepsjonen).
+
+---
+
 Nettspiller for Radioresepsjonens podkastepisoder
 
 Benytter [RSS-strømmen](http://podkast.nrk.no/program/radioresepsjonen.rss) direkte fra NRK, og tilbyr alle de ferskeste episodene.
